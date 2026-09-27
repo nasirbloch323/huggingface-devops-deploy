@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ai-model-deploy-service
+spec:
+  selector:
+    app: ai-model-deploy
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8000
+  type: ClusterIP   # Minikube pe test ke liye NodePort bhi kar sakte ho
